@@ -25,7 +25,6 @@ namespace Edelstein.Service.Game.Conversations.Speakers.Fields
             => new QuestSpeaker(Context, Obj, questTemplateID, npcTemplateID);
 
         public byte Gender => Obj.Character.Gender;
-
         public byte Skin
         {
             get => Obj.Character.Skin;

@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using Edelstein.Core;
 using Edelstein.Core.Extensions;
@@ -15,7 +16,6 @@ namespace Edelstein.Service.Game.Services.Handlers
             var templateID = packet.Decode<int>();
             var template = user.Service.TemplateManager.Get<SkillTemplate>(templateID);
             var skillLevel = user.Character.GetSkillLevel(templateID);
-
             if (template == null) return;
             if (skillLevel <= 0) return;
             if (!SkillConstants.IsKeydownSkill(templateID)) return;

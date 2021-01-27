@@ -66,7 +66,7 @@ namespace Edelstein.Service.Social.Managers.Party
             using var store = _dataStore.OpenSession();
             var memberRecord = store
                 .Query<PartyMemberRecord>()
-                .FirstOrDefault(r => r.CharacterID == id);
+                .FirstOrDefault(r => r.CharacterID == id); //this bitches alot
 
             if (memberRecord == null)
                 return null;

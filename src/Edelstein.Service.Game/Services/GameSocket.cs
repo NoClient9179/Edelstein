@@ -44,7 +44,6 @@ namespace Edelstein.Service.Game.Services
         public override Task OnPacket(IPacket packet)
         {
             var operation = (RecvPacketOperations) packet.Decode<short>();
-
             return Service.Handlers.ContainsKey(operation)
                 ? Service.Handlers[operation].Handle(operation, packet, this)
                 : Task.Run(() => Logger.Warn($"Unhandled packet operation {operation}"));

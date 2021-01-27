@@ -33,12 +33,18 @@ namespace Edelstein.Service.Game.Fields
             Template = template;
 
             _pools = new Dictionary<FieldObjType, IFieldPool>();
-            _portals = template.Portals
-                .Where(kv => kv.Value.Name != "sp" && kv.Value.Name != "tp")
-                .ToDictionary(
-                    kv => kv.Value.Name,
-                    kv => (IFieldPortal) new FieldPortal(this, kv.Value)
-                );
+            try
+            {
+                _portals = template.Portals
+                                .Where(kv => kv.Value.Name != "sp" && kv.Value.Name != "tp")
+                                .ToDictionary(
+                                    kv => kv.Value.Name,
+                                    kv => (IFieldPortal)new FieldPortal(this, kv.Value)
+                                );
+            } catch
+            { Console.WriteLine("we ignored bitching about a portal"); }
+
+
             _generators = generators;
         }
 

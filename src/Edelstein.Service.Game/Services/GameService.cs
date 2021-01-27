@@ -72,6 +72,7 @@ namespace Edelstein.Service.Game.Services
             Handlers = new Dictionary<RecvPacketOperations, IGameHandler>
             {
                 [RecvPacketOperations.MigrateIn] = new MigrateInHandler(),
+                [RecvPacketOperations.UserHit] = new UserHitHandler(),
                 [RecvPacketOperations.AliveAck] = new AliveAckHandler(),
                 [RecvPacketOperations.FuncKeyMappedModified] = new FuncKeyMappedModifiedHandler(),
                 [RecvPacketOperations.QuickslotKeyMappedModified] = new QuickSlotKeyMappedModifiedHandler(),

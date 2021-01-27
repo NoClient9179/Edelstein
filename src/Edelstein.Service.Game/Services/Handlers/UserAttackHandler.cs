@@ -18,9 +18,9 @@ namespace Edelstein.Service.Game.Services.Handlers
             var info = new AttackInfo(type, user, packet);
 
             // keydown packets
-
             using (var p = new Packet(SendPacketOperations.UserMeleeAttack + (int) type))
             {
+                Console.WriteLine(type);
                 p.Encode<int>(user.ID);
                 p.Encode<byte>((byte) (info.DamagePerMob | 16 * info.MobCount));
                 p.Encode<byte>(user.Character.Level);
@@ -65,6 +65,12 @@ namespace Edelstein.Service.Game.Services.Handlers
                 {
                     p.Encode<short>(0); // bSerialAttack?
                     p.Encode<short>(0); // v91
+                }
+
+                if (type == AttackType.Magic)
+                {
+                    p.Encode<short>(0); // bSerialAttack? i am just throwing shoot shit at this
+                    p.Encode<short>(0); // v91 i am just throwing shoot shit at this
                 }
 
                 switch ((Skill) info.SkillID)
