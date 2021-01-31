@@ -107,6 +107,7 @@ namespace Edelstein.Service.Game.Services
                 [RecvPacketOperations.UserActivatePetRequest] = new UserActivatePetRequestHandler(),
                 [RecvPacketOperations.UserPortalScriptRequest] = new UserPortalScriptRequestHandler(),
                 [RecvPacketOperations.UserQuestRequest] = new UserQuestRequestHandler(),
+                [RecvPacketOperations.UserCalcDamageStatSetRequest] = new UserCalcDamageStatSetRequestHandler(),
 
                 [RecvPacketOperations.PetMove] = new PetMoveHandler(),
 
