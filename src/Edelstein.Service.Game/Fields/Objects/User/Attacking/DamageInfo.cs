@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Edelstein.Network.Packets;
 using Edelstein.Service.Game.Fields.Objects.Mob;
-
+//mob damage when attacked
 namespace Edelstein.Service.Game.Fields.Objects.User.Attacking
 {
     public class DamageInfo

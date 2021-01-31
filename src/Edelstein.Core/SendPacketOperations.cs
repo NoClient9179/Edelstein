@@ -17,6 +17,7 @@ namespace Edelstein.Core
         SelectWorldResult = 0xB,
         SelectCharacterResult = 0xC,
         CheckDuplicatedIDResult = 0xD,
+        PassiveskillInfoUpdate = 0xD9,
         CreateNewCharacterResult = 0xE,
         DeleteCharacterResult = 0xF,
         MigrateCommand = 0x10,

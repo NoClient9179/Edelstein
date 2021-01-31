@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using Edelstein.Core;
 using Edelstein.Network.Packets;
@@ -28,8 +29,14 @@ namespace Edelstein.Service.Game.Services.Handlers
             if (hp > 0 || mp > 0)
                 await user.ModifyStats(s =>
                 {
-                    s.HP += hp;
-                    s.MP += mp;
+                    if (s.HP + hp <= 0)
+                    {
+                        Console.WriteLine("You are dead Bro");
+                        s.HP = 0;
+                    } else
+                    {
+                        s.HP += hp;
+                    }
                 });
         }
     }

@@ -76,7 +76,7 @@ namespace Edelstein.Service.Game.Services
                 [RecvPacketOperations.AliveAck] = new AliveAckHandler(),
                 [RecvPacketOperations.FuncKeyMappedModified] = new FuncKeyMappedModifiedHandler(),
                 [RecvPacketOperations.QuickslotKeyMappedModified] = new QuickSlotKeyMappedModifiedHandler(),
-
+                [RecvPacketOperations.PassiveskillInfoUpdate] = new PassiveskillInfoUpdateHandler(),
                 [RecvPacketOperations.UserTransferFieldRequest] = new UserTransferFieldRequestHandler(),
                 [RecvPacketOperations.UserTransferChannelRequest] = new UserTransferChannelRequestHandler(),
                 [RecvPacketOperations.UserMigrateToCashShopRequest] = new UserMigrateToCashShopRequestHandler(),
