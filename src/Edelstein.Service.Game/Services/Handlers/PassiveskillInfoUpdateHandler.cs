@@ -18,7 +18,7 @@ public class PassiveskillInfoUpdateHandler : AbstractFieldUserHandler
     {
         var p = new Packet();
         Console.WriteLine("UserPassiveskillInfoUpdateHandler");
-        //when you put a skill point into a skill, this tells the server to update the char object + db?
+        //when you put a skill point into a skill, this tells the server to do something here
         //when you use any skill with passive properties, this is called. for example, use a mount/buff skill and some
         //unique packet is sent so you may identify this and respond accordingly
         //i should probably be calling some buff functions in the user character object if they're there
