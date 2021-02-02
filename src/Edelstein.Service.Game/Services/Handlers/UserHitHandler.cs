@@ -10,7 +10,7 @@ using Edelstein.Service.Game.Services.Handlers;
     {
         //from getting hit by a snail
         //this is without any active or passive skills.
-        Console.WriteLine("UserHitHandler");
+        //Console.WriteLine("UserHitHandler");
         if (packet.Buffer.Length > 25 || packet.Buffer.Length < 25) { Console.Write("not handled? buffer length: " + packet.Buffer.Length); }
         var p = new Packet(SendPacketOperations.UserHit); //this is equal to v1 in the client, which is always supposed to be the packet?
         //opcodes are ints, called nType.

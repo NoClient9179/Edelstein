@@ -20,8 +20,8 @@ namespace Edelstein.Provider.Parsing.NX
 
         public IDataProperty Resolve(string path = null)
         {
-            var node = _node.ResolvePath(path);
-            return node == null ? null : new NXDataProperty(node);
+            INXNode node = _node.ResolvePath(path);
+                return node == null ? null : new NXDataProperty(node);
         }
 
         public IDataProperty ResolveAll()

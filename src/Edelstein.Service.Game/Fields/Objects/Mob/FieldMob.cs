@@ -168,6 +168,7 @@ namespace Edelstein.Service.Game.Fields.Objects.Mob
 
             if (setAsController)
                 EncodeData(p, MobAppearType.Regen);
+            //send extra byte for MobCtrlType?
             return p;
         }
     }

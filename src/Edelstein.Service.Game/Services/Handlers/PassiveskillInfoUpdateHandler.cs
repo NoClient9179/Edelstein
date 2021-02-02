@@ -24,12 +24,12 @@ public class PassiveskillInfoUpdateHandler : AbstractFieldUserHandler
         //i should probably be calling some buff functions in the user character object if they're there
         //in rebirth, aura flag makes us call a unique AddAura function
         _ = packet.Decode<short>(); // opcode
-        short idk = packet.Decode<short>() // idk, tLastUpdate?
+        short idk = packet.Decode<short>(); // idk, tLastUpdate?
         var nBuffId = packet.Decode<byte>(); //probably mislabeled
         //short tDuration = packet.Decode<short>();
         byte State = packet.Decode<byte>(); // probably mislabeled
         //use these values for UserCalcDamageStatSetRequest?
-        p.Encode<byte>(0);
+        p.Encode<byte>(1);
         await user.Field.BroadcastPacket(user, p);
     }
 }
